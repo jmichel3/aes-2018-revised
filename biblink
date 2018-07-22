@@ -1,0 +1,4 @@
+pdflatex michelson2018_V2
+bibtex michelson2018_V2
+pdflatex michelson2018_V2
+pdflatex michelson2018_V2

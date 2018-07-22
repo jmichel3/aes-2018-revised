@@ -1,0 +1,91 @@
+\begin{thebibliography}{15}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\natexlab}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem[{Macrae and Dixon(2010)}]{macrae2010}
+Macrae, R. and Dixon, S., \enquote{A guitar tablature score follower,} in
+  \emph{Proc. Int. Conf. Multimedia Expo}, pp. 725--726, 2010.
+
+\bibitem[{Fletcher et~al.(1962)Fletcher, Blackham, and Stratton}]{fletcher1962}
+Fletcher, H., Blackham, E., and Stratton, R., \enquote{Quality of Piano Tones,}
+  \emph{Journal of the Acoustical Society of America}, 34(6), pp. 749--761,
+  1962.
+
+\bibitem[{Barbancho et~al.(2012)Barbancho, Tard{\'o}n, Sammartino, and
+  Barbancho}]{barbanchoi2012}
+Barbancho, I., Tard{\'o}n, L., Sammartino, S., and Barbancho, A.,
+  \enquote{Inharmonicity-based method for the automatic generation of guitar
+  tablature,} in \emph{Proceedings of the IEEE Transactions on Audio, Speech,
+  and Language Processing}, pp. 1857--1868, 2012.
+
+\bibitem[{Galembo(1979)}]{galembo1979}
+Galembo, A., \enquote{Method for objective evaluation of the sound quality in
+  piano trebles (in Russian),} in \emph{Proc. of 18th Acoust. Conf. of
+  Czechoslovakia}, 1979.
+
+\bibitem[{Galembo(1987)}]{galembo1987}
+Galembo, A., \emph{The quality of piano tones (in Russian)}, Legkaya Industria
+  Press, Moscow, 1987.
+
+\bibitem[{Galembo and Askenfelt(1994)}]{galembo1994}
+Galembo, A. and Askenfelt, A., \enquote{Measuring inharmonicity through pitch
+  extraction,} \emph{STL-QPSR}, 35(1), pp. 135--144, 1994.
+
+\bibitem[{Galembo and Askenfelt(1999)}]{galembo1999}
+Galembo, A. and Askenfelt, A., \enquote{Signal representation and estimation of
+  spectral parameters by inharmonic comb filters with application to the
+  piano,} \emph{IEEE Transactions on Speech and Audio Processing}, 7(2), pp.
+  197--203, 1999.
+
+\bibitem[{Rauhala et~al.(2007)Rauhala, Lehtonen, and
+  V{\"a}lim{\"a}ki}]{rauhala2007}
+Rauhala, J., Lehtonen, H.~M., and V{\"a}lim{\"a}ki, V., \enquote{Fast automatic
+  inharmonicity estimation algorithm,} \emph{Journal of the Acoustical Society
+  of America}, 121(5), pp. 184--189, 2007.
+
+\bibitem[{Hodgkinson et~al.(2009)Hodgkinson, Wang, Timoney, and
+  Lazzarini}]{hodgkinson2009}
+Hodgkinson, M., Wang, J., Timoney, J., and Lazzarini, V., \enquote{Handling
+  Inharmonic series with median-adjustive trajectories,} in \emph{Proc. of the
+  12th Int. Conference on Digital Audio Effects (DAFx-09)}, Como, Italy, 2009.
+
+\bibitem[{Abe{\ss}er(2012)}]{abesser2012}
+Abe{\ss}er, J., \enquote{Automatic String Detection for Bass Guitar and
+  Electric Guitar,} in \emph{From Sounds to Music and Emotions - 9th
+  International Symposium, CMMR 2012}, pp. 333--352, London, UK, 2012.
+
+\bibitem[{Kehling et~al.(2014)Kehling, Abe{\ss}er, Dittmar, and
+  Schuller}]{kehling2014}
+Kehling, C., Abe{\ss}er, J., Dittmar, C., and Schuller, G., \enquote{Automatic
+  Tablature Transcription of Electric Guitar Recordings by Estimation of Score-
+  and Instrument-related Parameters,} in \emph{Proc. of the 17th Int.
+  Conference on Digital Audio Effects (DAFx-14)}, Erlangen, Germany, 2014.
+
+\bibitem[{Dittmar et~al.(2013)Dittmar, M{\"a}nnchen, and
+  Abe{\ss}er}]{dittmar2013}
+Dittmar, C., M{\"a}nnchen, A., and Abe{\ss}er, J., \enquote{Real-time Guitar
+  String Detection for Music Education Software,} in \emph{Proceedings of the
+  14th International Workshop on Image and Audio Analysis for Multimedia
+  Interactive Services (WIAMIS)}, Paris, France, 2013.
+
+\bibitem[{{The MathWorks}(2017)}]{matlab-robustfit}
+{The MathWorks}, \enquote{{Least-Squares Fitting Documentation},}
+  \url{http://www.mathworks.com/help/curvefit/least-squares-fitting.html},
+  2017.
+
+\bibitem[{Goto et~al.(2003)Goto, Hashiguchi, Nishimura, and Oka}]{goto2003}
+Goto, M., Hashiguchi, H., Nishimura, T., and Oka, R., \enquote{R{W}{C} Music
+  Database: Music Genre Database and Musical Instrument Sound Database,} in
+  \emph{Proceedings of the 4th International Conference on Music Information
+  Retrieval (ISMIR 2003)}, pp. 229--230, 2003.
+
+\bibitem[{McNemar(1947)}]{McNemar1947}
+McNemar, Q., \enquote{Note on the sampling error of the difference between
+  correlated proportions or percentages,} \emph{Psychometrika}, 12(2), pp.
+  153--157, 1947, ISSN 1860-0980, \doi{10.1007/BF02295996}.
+
+\end{thebibliography}
