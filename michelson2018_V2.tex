@@ -39,11 +39,11 @@ and Bayesian Classification}
 \author[2]{Thomas M. Sullivan}
 
 % Affiliations go here
-\affil[1]{New Sensor Corporation / Electro-Harmonix}
+\affil[1]{Electro-Harmonix / New Sensor Corporation}
 \affil[2]{Department of Electrical and Computer Engineering, and School of Music, Carnegie Mellon University}
 
 % Correspondece should include the corresponding author's name and e-mail address
-\correspondence{Jonathan Michelson}{jonathan@ehx.com}
+\correspondence{Jonathan Michelson}{jon.michelson93@gmail.com}
 
 % These are used for headers. Anything that fits is okay. Please use proper punctuation.
 
@@ -70,7 +70,7 @@ We propose two new methods to classify guitar strings for automated tablature tr
 ]
 
 \section{Introduction}
-The guitar is a popular musical instrument whose family comprises a diverse collection of stringed instruments. Despite their variation, the majority of guitars have six strings tuned to $E2$ ($82$ Hz), $A2$ ($110$ Hz), $D3$ ($147$ Hz), $G3$ ($196$ Hz), $B3$ ($247$ Hz), and $E4$ ($330$ Hz). Most guitars also typically have upwards of 20 frets, allowing for versatile musical passage realizations along the fretboard. A consequence of the tuning and extensive fretting locations is  a substantial pitch overlap between neighboring strings; multiple fretboard locations can usually be selected to produce a given pitch. This ambiguity renders conventional music scores, which represent passages as notes and chords, undesirable for students trying to learn more skillful placement of scales and arpeggios, or for enthusiasts trying to uncover the fretboard positions used on riffs recorded by virtuosic players. Figure~\ref{fig:score-tabs} illustrates this ambiguity.  
+The guitar is a popular musical instrument whose family comprises a diverse collection of stringed instruments. Despite their variation, the majority of guitars have six strings tuned to $E2$ ($82$ Hz, String 6), $A2$ ($110$ Hz, String 5), $D3$ ($147$ Hz, String 4), $G3$ ($196$ Hz, String 3), $B3$ ($247$ Hz, String 2), and $E4$ ($330$ Hz, String 1). Most guitars also typically have upwards of 20 frets, allowing for versatile musical passage realizations along the fretboard. A consequence of the tuning and extensive fretting locations is  a substantial pitch overlap between neighboring strings; multiple fretboard locations can usually be selected to produce a given pitch. This ambiguity renders conventional music scores, which represent passages as notes and chords, undesirable for students trying to learn more skillful placement of scales and arpeggios, or for enthusiasts trying to uncover the fretboard positions used on riffs recorded by virtuosic players. Figure~\ref{fig:score-tabs} illustrates this ambiguity.  
 
 Tablature is a popular alternative music notation that does not suffer from the one-to-many mapping of scores. The staff, instead of representing pitch as in classical notation, depicts a birds-eye view of the guitar neck from the perspective of the performer. Each of the six horizontal lines represents a corresponding string on the guitar, and numbers on each line specify the fret to be fingered. Reasons for tablature desirability are numerous \citep{macrae2010}, such as accessibility (legibility does not require formal musical training) and transportability (tablature can be easily represented with ASCII characters). 
 
@@ -215,7 +215,7 @@ tuning, this is a maximum of only three positions. To classify a note, we select
 
 \section{Results}  
 \subsection{RWC Transcription}
-We evaluated our baseline and regression methods using a subset of the Real World Corpus (RWC) database \citep{goto2003}. We transcribed nine RWC guitars (three classical, three acoustic, and three electric) at three levels of context: guitar-specific, guitar-averaged, and guitar-independent. For guitar-specific trials, we trained and tested the system on the same guitar using three-fold cross-validation. For guitar-averaged trials, we trained the system on all recordings of the two guitars in the same class as the test guitar, as well as a two-thirds training portion of the test guitar, and then evaluated on the remaining third of the test guitar recordings. For guitar-independent trials, we trained the system on two of the guitars in the same class as the test guitar, and tested on all recordings of the remaining one. We used error probabilities to quantify the transcription performance for each guitar.
+We evaluated our baseline and regression methods using a subset of the Real World Corpus (RWC) database \citep{goto2003}. The selected RWC recordings were isolated monophonic notes enumerating every fret on every string. We transcribed nine RWC guitars (three classical, three acoustic, and three electric) at three levels of context: guitar-specific, guitar-averaged, and guitar-independent. For guitar-specific trials, we trained and tested the system on the same guitar using three-fold cross-validation. For guitar-averaged trials, we trained the system on all recordings of the two guitars in the same class as the test guitar, as well as a two-thirds training portion of the test guitar, and then evaluated on the remaining third of the test guitar recordings. For guitar-independent trials, we trained the system on two of the guitars in the same class as the test guitar, and tested on all recordings of the remaining one. We used error probabilities to quantify the transcription performance for each guitar.
 %\twocolumn[
 %\maketitle
 
@@ -228,7 +228,7 @@ Figure~\ref{fig:novel-methods-sig-comp} compares the error probabilities and sig
 \label{fig:novel-methods-sig-comp}
 \end{figure}
 
-
+Lastly, Tables~\ref{tab:cg-str-f}, ~\ref{tab:ag-str-f}, and ~\ref{tab:eg-str-f} display the string-wise F1-scores of our regression method for each of the classical, acoustic, and electric guitars, respectively. The evaluation scenario from which these scores were tabulated was the ``Guitar-averaged" scenario. 
 
 \begin{figure}[!t]
 \centering
@@ -237,6 +237,86 @@ Figure~\ref{fig:novel-methods-sig-comp} compares the error probabilities and sig
 \label{fig:sig-comp-PCT}
 \end{figure}
 
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{||c|c|c|c|c||}
+\hline
+\multicolumn{5}{||c||}{\bf{Transcription F1-scores}} \\
+\hline
+String No. & CG1 & CG2 & CG3 & Overall CG \\
+\hline
+1 & 0.96 & 0.93 & 0.96 & 0.95\\
+\hline
+2 & 0.92 & 0.90 & 0.91 & 0.91\\
+\hline
+3 & 1.00 & 0.95 & 0.96 & 0.97\\
+\hline
+4 & 0.96 & 0.93 & 0.91 & 0.93\\
+\hline
+5 & 1.00 & 0.96 & 0.93 & 0.96 \\
+\hline
+6 & 1.00 & 0.98 & 1.00 & 0.99\\ 
+\hline
+\hline
+\end{tabular}
+\caption{String-wise F1-scores for the RWC classical guitars, using regression classification for the ``Guitar-averaged" scenario.} 
+\label{tab:cg-str-f}
+\end{center}
+\end{table}
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{||c||c|c|c|c||}
+\hline
+\multicolumn{5}{||c||}{\bf{Transcription F1-scores}} \\
+\hline
+String No. & AG1 & AG2 & AG3 & Overall AG \\
+\hline
+1 &  0.96 & 0.96 & 0.96 & 0.96 \\
+\hline
+2 & 0.94 & 0.80 & 0.87 &  0.87\\
+\hline
+3 & 0.91 & 0.89 & 0.85 & 0.88\\
+\hline
+4 & 1.00 & 1.00 & 0.99 &  1.00 \\
+\hline
+5 & 1.00 & 1.00 & 0.99 &  1.00 \\
+\hline
+6 & 1.00 & 1.00 & 1.00 & 1.00 \\ 
+\hline
+\hline
+\end{tabular}
+\caption{String-wise F1-scores for the RWC acoustic guitars, using regression classification for the ``Guitar-averaged" scenario.} 
+\label{tab:ag-str-f}
+\end{center}
+\end{table}
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{||c||c|c|c|c||}
+\hline
+\multicolumn{5}{||c||}{\bf{Transcription F1-scores}} \\
+\hline
+String No. & EG1 & EG2 & EG3 & Overall EG\\
+\hline
+1 & 0.96 & 0.94 & 0.96 & 0.95 \\
+\hline
+2 & 0.94 & 0.95 & 0.72 & 0.87\\
+\hline
+3 & 0.47 & 0.42 & 0.42 &  0.44\\
+\hline
+4 & 0.66 & 0.72 & 0.79 &  0.72\\
+\hline
+5 & 0.85 & 0.92 & 1.00 &  0.92 \\
+\hline
+6 & 0.96 & 0.98 & 1.00 &  0.98 \\ 
+\hline
+\hline
+\end{tabular}
+\caption{String-wise F1-scores for the RWC electric guitars, using regression classification for the ``Guitar-averaged" scenario.} 
+\label{tab:eg-str-f}
+\end{center}
+\end{table}
 
 \section{Discussion} 
 \subsection{RWC Transcription}
@@ -246,7 +326,9 @@ The ``Guitar-independent Trials" plot of Figure~\ref{fig:novel-methods-sig-comp}
 
 Figure~\ref{fig:sig-comp-PCT} shows that PCT performed at a level that was equal to or better than  our two methods in eight of the twelve RWC classical and acoustic trials. At the time of writing of this paper we were not sure whether the authors of PCT used the same subset of RWC electric guitars, so we omitted them from our analysis. While we had expected that prior consideration of the inharmonicity of every fret would help our classifier obtain a more reliable picture of the inharmonicity trajectory, it appears that this is not the case. The better performance of PCT suggests that the theoretical inharmonicity trajectories are sufficient for transcription, at least for the ``guitar-specific'' and ``guitar-averaged'' trial contexts of classical and acoustic guitars. 
 
-We believe that the performance of our system could be improved with more reliable inharmonicity estimation. One uncontrolled variable that may have adversely affected performance was guitar string geometry. To understand better the potential impact of guitar string geometry on estimated inharmonicity, we recorded identical note plucks on personal guitars exhibiting a wide variety of combinations of string age, intonation length, and gauge size, and winding.  We observed that variations in gauge size and winding affected our log-inharmonicity measurements by orders of magnitude between one-tenth and one, which is a degree of variability that is commensurate with differences  between log-inharmonicity estimates for adjacent strings. The RWC database does not annotate string geometry parameters for any of its guitars, so it is possible that variations along these lines may have  interfered with the quality of reported transcription results among systems using this database.   We will explore the potential impact of this variability on our estimation quality in the future.
+The string-wise transcription performances in Tables~\ref{tab:cg-str-f}, ~\ref{tab:ag-str-f}, and ~\ref{tab:eg-str-f} provide further insight into our transcription error probabilities. The classical guitars overall exhibited reliable performance. For the acoustic guitars, however, the worst-performing strings were consistently String 2 and 3. This was expected given the proximity of their log-inharmonicity estimates in Figure~\ref{fig:log-beta-v-midi}. For the electric guitars, the worst-performing string was consistently String 3. It is possible that these acoustic and electric guitar string observations are partially due to patterns of variation in string geometry; on acoustic guitars, the decreasing thickness from String 3 to String 2 is typically accompanied by the absence of string winding. On electric guitars, the absence of winding can begin on either String 3 or String 2, depending on the string gauge.
+
+To understand better the potential impact of guitar string geometry on estimated inharmonicity, we recorded identical note plucks on personal guitars exhibiting a wide variety of combinations of string age, intonation length, and gauge size, and winding.  We observed that variations in gauge size and winding affected our log-inharmonicity measurements by orders of magnitude between one-tenth and one, which is a degree of variability that is commensurate with differences between log-inharmonicity estimates for adjacent strings. The RWC database does not annotate string geometry parameters for any of its guitars, so it is possible that variations along these lines may have interfered with the quality of reported transcription results among systems using this database. We will explore the potential impact of this variability on our estimation quality in the future.
 
 \section{Summary} 
 Tablature is a popular music notation for guitarists because it uniquely specifies fretboard positions for musical passages. Its manual annotation process, however, is tedious. Automatic transcription systems offer a solution to this difficulty. Inharmonicity is a phenomenon which affects the degree of upward skew of the partials of a note, and it is a key feature used in many systems that attempt automated guitar tablature. We proposed capitalizing on the predictable log-inharmonicity trajectory of a string by characterizing it as a linear function of its pitch, and we developed a baseline Bayesian classifier that exploits this relationship. 
